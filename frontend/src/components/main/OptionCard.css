@@ -18,7 +18,25 @@
 .topic-img {
     width: 56px;
     height: 56px;
+    padding: 8px;
     border-radius: 0.5rem;
+    background: hsl(151, 88%, 94%);
+}
+
+.html-img {
+    background: hsl(22, 100%, 96%);
+}
+
+.css-img {
+    background: hsl(151, 88%, 94%);
+}
+
+.javascript-img {
+    background: hsl(225, 100%, 96%);
+}
+
+.accessibility-img {
+    background: hsl(278, 100%, 95%);
 }
 
 .option-text {

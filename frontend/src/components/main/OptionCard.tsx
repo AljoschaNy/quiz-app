@@ -1,15 +1,12 @@
 import "./OptionCard.css";
+import {OptionCardProps} from "../../types/types.ts";
 
-type OptionCardProps = {
-    imgPath: string,
-    optionText: string
-}
+function OptionCard({ topic }:Readonly<OptionCardProps>) {
 
-function OptionCard({ optionText, imgPath }:Readonly<OptionCardProps>) {
     return (
         <button className={"option-card"}>
-            <img className={"topic-img"} src={imgPath} alt={"topic-icon"} />
-            <span className={"option-text"}>{optionText}</span>
+            <img className={topic.name.toLowerCase() + "-img topic-img"} src={topic.path} alt={topic.name + " illustration"} />
+            <span className={"option-text"}>{topic.name}</span>
         </button>
     );
 }
