@@ -55,9 +55,9 @@ body {
   font-size: 0.75rem;
 }
 
-h1,
-.intro-text {
+h1 {
   font-size: 4rem;
+  line-height: 1em;
 }
 
 .intro-text {
@@ -68,11 +68,9 @@ h2 {
   font-size: 2.25rem;
 }
 
-.option-text {
-  font-size: 1.75rem;
-}
-
 aside {
   font-weight: var(--font-weight-regular);
   font-size: 1.25rem;
+  font-style: italic;
+  color: var(--secondary-color);
 }
