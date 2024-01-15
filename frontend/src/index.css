@@ -3,6 +3,7 @@
   --primary-font: Rubik, system-ui, sans-serif;
   --line-height: 1.5;
   --font-weight-regular: 400;
+  --font-weight-light: 300;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
@@ -58,10 +59,6 @@ body {
 h1 {
   font-size: 4rem;
   line-height: 1em;
-}
-
-.intro-text {
-  font-weight: var(--font-weight-regular);
 }
 
 h2 {

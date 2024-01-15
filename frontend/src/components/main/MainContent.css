@@ -12,6 +12,10 @@
     margin-top: 3rem;
 }
 
+.intro-text {
+    font-weight: var(--font-weight-light);
+}
+
 /* Options Container Styles */
 .options-container {
     width: 564px;
