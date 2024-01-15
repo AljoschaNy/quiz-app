@@ -1,0 +1,19 @@
+/* Info Section Styles */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-section {
+    max-width: 465px;
+}
+
+.info-section aside {
+    margin-top: 3rem;
+}
+
+/* Options Container Styles */
+.options-container {
+    width: 564px;
+}
+
