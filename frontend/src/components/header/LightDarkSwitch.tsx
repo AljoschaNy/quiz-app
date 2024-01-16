@@ -4,9 +4,12 @@ import "./LightDarkSwitch.css";
 
 function LightDarkSwitch() {
     return (
-        <div className={"toggle-switch"}>
+        <div className={"toggle-switch-container"}>
             <SunIcon />
-            <button>Switch Color</button>
+            <label className={"switch"}>
+                <input type={"checkbox"}/>
+                <span className={"slider"}></span>
+            </label>
             <MoonIcon />
         </div>
 
