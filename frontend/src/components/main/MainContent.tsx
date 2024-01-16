@@ -15,7 +15,7 @@ function MainContent() {
         <main className={"main-content"}>
             <section className={"info-section"}>
                 <h1><span className={"intro-text"}>Welcome to the</span> Frontend Quiz!</h1>
-                <aside>Pick a subject to get started.</aside>
+                <p className={"info-text"}>Pick a subject to get started.</p>
             </section>
 
             <section className={"options-container"}>

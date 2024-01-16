@@ -8,8 +8,12 @@
     max-width: 465px;
 }
 
-.info-section aside {
-    margin-top: 3rem;
+p.info-text {
+    font-weight: var(--font-weight-regular);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-top: 48px;
 }
 
 .intro-text {

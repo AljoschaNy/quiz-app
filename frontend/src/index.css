@@ -2,8 +2,8 @@
 :root {
   --primary-font: Rubik, system-ui, sans-serif;
   --line-height: 1.5;
-  --font-weight-regular: 400;
   --font-weight-light: 300;
+  --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
@@ -72,11 +72,4 @@ h1 {
 
 h2 {
   font-size: 2.25rem;
-}
-
-aside {
-  font-weight: var(--font-weight-regular);
-  font-size: 1.25rem;
-  font-style: italic;
-  color: var(--secondary-color);
 }
