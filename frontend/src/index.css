@@ -49,6 +49,15 @@ html {
   line-height: var(--line-height);
   color: var(--primary-color);
   background-color: var(--bg-primary);
+  background-image: url("./assets/pattern-background-desktop-dark.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+html,
+body {
+  height: 100%
 }
 
 /* Typography Styles */
