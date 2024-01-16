@@ -1,9 +1,14 @@
-import './App.css'
+import './App.css';
+import Header from "./components/header/Header.tsx";
+import StartPage from "./components/pages/StartPage.tsx";
 
 function App() {
   return (
-    <h2>Hello world</h2>
+    <div className={"main-container"}>
+        <Header />
+        <StartPage />
+    </div>
   );
 }
 
-export default App
+export default App;
