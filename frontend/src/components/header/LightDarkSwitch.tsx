@@ -4,7 +4,9 @@ import "./LightDarkSwitch.css";
 import {useEffect, useState} from "react";
 
 function LightDarkSwitch() {
-    const [isChecked,setIsChecked] = useState(true);
+    const systemPrefersDark: boolean = window.matchMedia("(prefers-color-scheme: dark)")?.matches;
+    const initialIsChecked: boolean = document.documentElement.classList.contains("dark") || systemPrefersDark;
+    const [isChecked,setIsChecked] = useState<boolean>(initialIsChecked);
 
     useEffect(() => {
         if(isChecked) {
