@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+html.light .option-card {
+    box-shadow: 0 16px 40px 0 var(--drop-shadow-color);
+}
+
 .option-card:hover {
     border: 1px solid var(--accent-color);
 }

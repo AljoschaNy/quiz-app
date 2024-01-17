@@ -32,7 +32,7 @@
   --bg-accent: hsl(220, 50%, 95%);
   --primary-color: hsl(216,25%,25%);
   --secondary-color: hsl(219,13%,44%);
-  --drop-shadow-color: hsl(220, 29%, 66%);
+  --drop-shadow-color: hsla(220, 29%, 66%, 14%);
 }
 
 /* General Styles */
@@ -50,10 +50,17 @@ html {
   line-height: var(--line-height);
   color: var(--primary-color);
   background-color: var(--bg-primary);
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+html.dark {
+  background-image: url("assets/pattern-background-desktop-dark.svg");
+}
+
+html.light {
+  background-image: url("assets/pattern-background-desktop-light.svg");
 }
 
 html,
