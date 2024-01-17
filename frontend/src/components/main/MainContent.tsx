@@ -5,10 +5,10 @@ import {Topic} from "../../types/types.ts";
 function MainContent() {
 
     const topicsArray:Topic[] = [
-        {id: "1", name:"HTML",path:"./src/assets/icon-html.svg"},
-        {id: "2", name:"CSS", path:"./src/assets/icon-css.svg"},
-        {id: "3", name:"Javascript", path:"./src/assets/icon-js.svg"},
-        {id: "4", name:"Accessibility", path:"./src/assets/icon-accessibility.svg"}
+        {id: "1", name:"HTML",path:"assets/icon-html.svg"},
+        {id: "2", name:"CSS", path:"assets/icon-css.svg"},
+        {id: "3", name:"Javascript", path:"assets/icon-js.svg"},
+        {id: "4", name:"Accessibility", path:"assets/icon-accessibility.svg"}
     ];
 
     return (
