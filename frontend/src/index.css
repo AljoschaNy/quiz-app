@@ -7,12 +7,6 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  color-scheme: dark light;
-  --bg-primary: hsl(216,25%,25%);
-  --bg-secondary: hsl(215,27%,32%);
-  --bg-accent: hsl(214, 24%, 23%);
-  --primary-color: hsl(0,0%,100%);
-  --secondary-color: hsl(216,47%,78%);
   --accent-color: hsl(277,91%,56%);
   --success-color: hsl(151,70%,50%);
   --error-color: hsl(0,82%,63%);
@@ -23,15 +17,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-primary: hsl(220,38%,97%);
-    --bg-secondary: hsl(0,0%,100%);
-    --bg-accent: hsl(220, 50%, 95%);
-    --primary-color: hsl(216,25%,25%);
-    --secondary-color: hsl(219,13%,44%);
-    --drop-shadow-color: hsl(220, 29%, 66%);
-  }
+/* Theme Styles */
+.dark {
+  --bg-primary: hsl(216,25%,25%);
+  --bg-secondary: hsl(215,27%,32%);
+  --bg-accent: hsl(214, 24%, 23%);
+  --primary-color: hsl(0,0%,100%);
+  --secondary-color: hsl(216,47%,78%);
+}
+
+.light {
+  --bg-primary: hsl(220,38%,97%);
+  --bg-secondary: hsl(0,0%,100%);
+  --bg-accent: hsl(220, 50%, 95%);
+  --primary-color: hsl(216,25%,25%);
+  --secondary-color: hsl(219,13%,44%);
+  --drop-shadow-color: hsl(220, 29%, 66%);
 }
 
 /* General Styles */
@@ -49,7 +50,7 @@ html {
   line-height: var(--line-height);
   color: var(--primary-color);
   background-color: var(--bg-primary);
-  background-image: url("../public/assets/pattern-background-desktop-dark.svg");
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

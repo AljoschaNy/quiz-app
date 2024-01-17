@@ -42,5 +42,6 @@
 .option-text {
     font-size: 1.75rem;
     font-family: var(--primary-font);
+    color: var(--primary-color);
     margin-left: 32px;
 }
