@@ -5,10 +5,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Builder
-@Document(collation = "topics")
+@Document(collection = "topics")
 public record Topic(
         @Id
-        String _id,
+        String id,
         String title,
         String icon,
         String category

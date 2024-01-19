@@ -4,7 +4,7 @@ import lombok.Builder;
 
 @Builder
 public record TopicDTO(
-        String _id,
+        String id,
         String title,
         String icon,
         String category
