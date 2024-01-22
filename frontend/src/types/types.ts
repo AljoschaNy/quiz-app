@@ -9,6 +9,6 @@ export type Topic = {
     category: string
 }
 
-export type MainContentType = {
+export type StartPageType = {
     topics: Topic[]
 }

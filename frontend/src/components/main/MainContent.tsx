@@ -1,23 +1,19 @@
-import "./MainContent.css";
-import OptionCard from "./OptionCard.tsx";
-import {MainContentType} from "../../types/types.ts";
+import StartPage from "../pages/StartPage.tsx";
+import {Topic} from "../../types/types.ts";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-function MainContent( {topics}:Readonly<MainContentType> ) {
+function MainContent() {
+    const [topics, setTopics] = useState<Topic[]>([])
+
+    useEffect(() => {
+        axios.get("/api/topics")
+            .then(response => setTopics(response.data))
+            .catch(error => console.log("error", error))
+    }, [])
 
     return (
-        <main className={"main-content"}>
-            <section className={"info-section"}>
-                <h1><span className={"intro-text"}>Welcome to the</span> Frontend Quiz!</h1>
-                <p className={"info-text"}>Pick a subject to get started.</p>
-            </section>
-
-            <section className={"options-container"}>
-                {topics.map(topic => {
-                    return <OptionCard key={topic.id} topic={topic}/>;
-                })}
-            </section>
-
-        </main>
+        <StartPage topics={topics}/>
     );
 }
 
