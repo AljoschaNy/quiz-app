@@ -7,7 +7,7 @@ function MainContent() {
     const [topics, setTopics] = useState<Topic[]>([])
 
     useEffect(() => {
-        axios.get("/api/topics")
+        axios.get<Topic[]>("/api/topics")
             .then(response => setTopics(response.data))
             .catch(error => console.log("error", error))
     }, [])
