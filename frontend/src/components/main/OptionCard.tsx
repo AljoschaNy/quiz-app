@@ -5,8 +5,8 @@ function OptionCard({ topic }:Readonly<OptionCardProps>) {
 
     return (
         <button className={"option-card"}>
-            <img className={topic.name.toLowerCase() + "-img topic-img"} src={topic.path} alt={topic.name + " illustration"} />
-            <span className={"option-text"}>{topic.name}</span>
+            <img className={topic.title.toLowerCase() + "-img topic-img"} src={topic.icon} alt={topic.title + " illustration"} />
+            <span className={"option-text"}>{topic.title}</span>
         </button>
     );
 }
