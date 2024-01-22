@@ -1,5 +1,6 @@
 package de.aljoschanyang.backend.controllers;
 
+import de.aljoschanyang.backend.exceptions.NoQuestionsException;
 import de.aljoschanyang.backend.models.QuestionDTO;
 import de.aljoschanyang.backend.services.QuestionService;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ public class QuestionController {
     private final QuestionService questionService;
 
     @GetMapping("/{topicId}")
-    public List<QuestionDTO> getAllQuestions(@PathVariable String topicId) {
+    public List<QuestionDTO> getQuestionsByTopicId(@PathVariable String topicId) throws NoQuestionsException {
         return questionService.getQuestionsByTopicId(topicId);
     }
 }

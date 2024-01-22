@@ -1,5 +1,6 @@
 package de.aljoschanyang.backend.services;
 
+import de.aljoschanyang.backend.exceptions.NoQuestionsException;
 import de.aljoschanyang.backend.models.Question;
 import de.aljoschanyang.backend.models.QuestionDTO;
 import de.aljoschanyang.backend.repositories.QuestionRepo;
@@ -22,8 +23,12 @@ public class QuestionService {
                 .build();
     }
 
-    public List<QuestionDTO> getQuestionsByTopicId(String topicId) {
+    public List<QuestionDTO> getQuestionsByTopicId(String topicId) throws NoQuestionsException {
         List<Question> questions = questionRepo.findQuestionsByTopicId(topicId);
+
+        if(questions.isEmpty()) {
+            throw new NoQuestionsException(topicId);
+        }
 
         return questions.stream()
                 .map(this::convertToDTO)
