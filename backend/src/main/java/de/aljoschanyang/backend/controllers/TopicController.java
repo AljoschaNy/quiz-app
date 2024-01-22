@@ -1,6 +1,5 @@
 package de.aljoschanyang.backend.controllers;
 
-import de.aljoschanyang.backend.models.Topic;
 import de.aljoschanyang.backend.models.TopicDTO;
 import de.aljoschanyang.backend.services.TopicService;
 import lombok.AllArgsConstructor;
