@@ -18,7 +18,7 @@ function LightDarkSwitch() {
         }
     }, [isChecked])
 
-    function handleClick() {
+    function handleChange() {
         setIsChecked(!isChecked);
     }
 
@@ -27,7 +27,7 @@ function LightDarkSwitch() {
         <div className={"toggle-switch-container"}>
             <SunIcon />
             <label className={"switch"}>
-                <input type={"checkbox"} checked={isChecked} onClick={handleClick}/>
+                <input type={"checkbox"} checked={isChecked} onChange={handleChange} />
                 <span className={"slider"}></span>
             </label>
             <MoonIcon />
