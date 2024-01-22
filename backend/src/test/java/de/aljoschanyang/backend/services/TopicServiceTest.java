@@ -5,6 +5,7 @@ import de.aljoschanyang.backend.models.TopicDTO;
 import de.aljoschanyang.backend.repositories.TopicRepo;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,7 @@ class TopicServiceTest {
     void getAllTopics_whenNoTopicsInDB_thenReturnEmptyList() {
         List<TopicDTO> expected = List.of();
 
-        when(topicService.getAllTopics()).thenReturn(expected);
+        when(mockTopicRepo.findAll()).thenReturn(Collections.emptyList());
         List<TopicDTO> actual = topicService.getAllTopics();
 
         verify(mockTopicRepo).findAll();
