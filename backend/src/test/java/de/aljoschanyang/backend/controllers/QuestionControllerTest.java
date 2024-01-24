@@ -57,5 +57,15 @@ class QuestionControllerTest {
                 .andExpect(content().string(expectedAsJson));
     }
 
+    @Test
+    @DirtiesContext
+    void getQuestionsByTopicId_whenNoQuestionsFound_thenThrowNoQuestionsException() throws Exception {
+        String invalidId = "1";
+
+        mockMvc.perform(get(BASE_URI + "/" + invalidId))
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("No questions found for this topic id: " + invalidId));
+    }
+
 
 }
