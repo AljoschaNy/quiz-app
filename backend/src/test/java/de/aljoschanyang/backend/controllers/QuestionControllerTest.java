@@ -66,6 +66,4 @@ class QuestionControllerTest {
                 .andExpect(status().isNotFound())
                 .andExpect(content().string("No questions found for this topic id: " + invalidId));
     }
-
-
 }
