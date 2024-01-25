@@ -12,3 +12,10 @@ export type Topic = {
 export type StartPageType = {
     topics: Topic[]
 }
+
+export type Question = {
+    id: string,
+    query: string,
+    options: string[],
+    answer: string
+}

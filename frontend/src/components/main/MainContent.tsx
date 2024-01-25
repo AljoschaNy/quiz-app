@@ -15,13 +15,10 @@ function MainContent() {
     }, [])
 
     return (
-        <>
-            <Routes>
+        <Routes>
                 <Route path={"/"} element={<StartPage topics={topics}/>} />
                 <Route path={"/question/:topicId"} element={<QuestionPage />} />
-            </Routes>
-        </>
-
+        </Routes>
     );
 }
 
