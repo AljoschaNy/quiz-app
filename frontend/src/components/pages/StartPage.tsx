@@ -1,5 +1,5 @@
 import "./StartPage.css";
-import OptionCard from "../main/OptionCard.tsx";
+import TopicCard from "../main/TopicCard.tsx";
 import {StartPageType} from "../../types/types.ts";
 
 function StartPage({topics}:Readonly<StartPageType> ) {
@@ -13,7 +13,7 @@ function StartPage({topics}:Readonly<StartPageType> ) {
 
             <section className={"options-container"}>
                 {topics.map(topic => {
-                    return <OptionCard key={topic.id} topic={topic}/>;
+                    return <TopicCard key={topic.id} topic={topic}/>;
                 })}
             </section>
 

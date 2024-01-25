@@ -2,6 +2,8 @@ import StartPage from "../pages/StartPage.tsx";
 import {Topic} from "../../types/types.ts";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import QuestionPage from "../pages/QuestionPage.tsx";
+import {Route, Routes} from "react-router-dom";
 
 function MainContent() {
     const [topics, setTopics] = useState<Topic[]>([])
@@ -13,7 +15,13 @@ function MainContent() {
     }, [])
 
     return (
-        <StartPage topics={topics}/>
+        <>
+            <Routes>
+                <Route path={"/"} element={<StartPage topics={topics}/>} />
+                <Route path={"/question/:topicId"} element={<QuestionPage />} />
+            </Routes>
+        </>
+
     );
 }
 
