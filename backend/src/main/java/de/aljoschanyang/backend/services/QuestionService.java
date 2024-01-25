@@ -23,7 +23,7 @@ public class QuestionService {
                 .build();
     }
 
-    public List<QuestionDTO> getQuestionsByTopicId(String topicId) throws NoQuestionsException {
+    public List<QuestionDTO> getQuestionsByTopicId(String topicId) {
         List<Question> questions = questionRepo.findQuestionsByTopicId(topicId);
 
         if(questions.isEmpty()) {
