@@ -12,7 +12,7 @@ class QuestionTest {
 
     @Test
     void equals_sameObjects_shouldReturnTrue() {
-        assertTrue(q1.equals(q1));
+        assertEquals(q1, q1);
     }
 
     @Test
@@ -51,15 +51,31 @@ class QuestionTest {
     }
 
     @Test
+    void equals_nullOptions_shouldReturnFalse() {
+        Question questionWithNullOptions = new Question("1","topic1",1,"query2",null, "A");
+        assertNotEquals(q1, questionWithNullOptions);
+    }
+
+    @Test
     void equals_differentAnswer_shouldReturnFalse() {
         Question questionWithDifferentAnswers = new Question("1","topic1",1,"query2",new String[]{"A","B","C"}, "B");
         assertNotEquals(q1, questionWithDifferentAnswers);
     }
 
     @Test
-    void equals_nullAndDifferentType_shouldReturnFalse() {
+    void equals_nullAnswer_shouldReturnFalse() {
+        Question questionWithNullAnswers = new Question("1","topic1",1,"query2",new String[]{"A","B","C"}, null);
+        assertNotEquals(q1, questionWithNullAnswers);
+    }
+
+    @Test
+    void equals_nullObject_shouldReturnFalse() {
         assertNotEquals(null, q1);
-        assertNotEquals("String", q1);
+    }
+
+    @Test
+    void equals_differentClassObject_shouldReturnFalse() {
+        assertNotEquals(new Object(), q1);
     }
 
     @Test
