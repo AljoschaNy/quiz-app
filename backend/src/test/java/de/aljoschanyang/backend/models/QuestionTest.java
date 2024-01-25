@@ -11,13 +11,61 @@ class QuestionTest {
     private final Question q3 = new Question("2","topic2",1,"query2",new String[]{"D","E","F"}, "D");
 
     @Test
+    void equals_sameObjects_shouldReturnTrue() {
+        assertEquals(q1, q1);
+    }
+
+    @Test
     void equals_identicalObjects_shouldReturnTrue() {
         assertEquals(q1, q2);
     }
 
     @Test
-    void equals_differentObjects_shouldReturnFalse() {
-        assertNotEquals(q1, q3);
+    void equals_differentIDs_shouldReturnFalse() {
+        Question questionWithDifferentID = new Question("2","topic1",1,"query1",new String[]{"A","B","C"}, "A");
+        assertNotEquals(q1, questionWithDifferentID);
+    }
+
+    @Test
+    void equals_differentTopicIDs_shouldReturnFalse() {
+        Question questionWithDifferentTopicID = new Question("1","topic2",1,"query1",new String[]{"A","B","C"}, "A");
+        assertNotEquals(q1, questionWithDifferentTopicID);
+    }
+
+    @Test
+    void equals_differentDifficulties_shouldReturnFalse() {
+        Question questionWithDifferentDifficulties = new Question("1","topic1",2,"query1",new String[]{"A","B","C"}, "A");
+        assertNotEquals(q1, questionWithDifferentDifficulties);
+    }
+
+    @Test
+    void equals_differentQueries_shouldReturnFalse() {
+        Question questionWithDifferentQueries = new Question("1","topic1",1,"query2",new String[]{"A","B","C"}, "A");
+        assertNotEquals(q1, questionWithDifferentQueries);
+    }
+
+    @Test
+    void equals_differentOptions_shouldReturnFalse() {
+        Question questionWithDifferentOptions = new Question("1","topic1",1,"query2",new String[]{"A"}, "A");
+        assertNotEquals(q1, questionWithDifferentOptions);
+    }
+
+    @Test
+    void equals_nullOptions_shouldReturnFalse() {
+        Question questionWithNullOptions = new Question("1","topic1",1,"query2",null, "A");
+        assertNotEquals(q1, questionWithNullOptions);
+    }
+
+    @Test
+    void equals_differentAnswer_shouldReturnFalse() {
+        Question questionWithDifferentAnswers = new Question("1","topic1",1,"query2",new String[]{"A","B","C"}, "B");
+        assertNotEquals(q1, questionWithDifferentAnswers);
+    }
+
+    @Test
+    void equals_nullAnswer_shouldReturnFalse() {
+        Question questionWithNullAnswers = new Question("1","topic1",1,"query2",new String[]{"A","B","C"}, null);
+        assertNotEquals(q1, questionWithNullAnswers);
     }
 
     @Test

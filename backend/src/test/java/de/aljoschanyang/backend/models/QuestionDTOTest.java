@@ -10,13 +10,49 @@ class QuestionDTOTest {
     private final QuestionDTO q3 = new QuestionDTO("2","query2",new String[]{"D","E","F"}, "D");
 
     @Test
+    void equals_sameObjects_shouldReturnTrue() {
+        assertEquals(q1, q1);
+    }
+
+    @Test
     void equals_identicalObjects_shouldReturnTrue() {
         assertEquals(q1, q2);
     }
 
     @Test
-    void equals_differentObjects_shouldReturnFalse() {
-        assertNotEquals(q1, q3);
+    void equals_differentIDs_shouldReturnFalse() {
+        QuestionDTO questionWithDifferentID = new QuestionDTO("2","query1",new String[]{"A","B","C"}, "A");
+        assertNotEquals(q1, questionWithDifferentID);
+    }
+
+    @Test
+    void equals_differentQueries_shouldReturnFalse() {
+        QuestionDTO questionWithDifferentQueries = new QuestionDTO("1","query2",new String[]{"A","B","C"}, "A");
+        assertNotEquals(q1, questionWithDifferentQueries);
+    }
+
+    @Test
+    void equals_differentOptions_shouldReturnFalse() {
+        QuestionDTO questionWithDifferentOptions = new QuestionDTO("1","query1",new String[]{"D","E","F"}, "A");
+        assertNotEquals(q1, questionWithDifferentOptions);
+    }
+
+    @Test
+    void equals_nullOptions_shouldReturnFalse() {
+        QuestionDTO questionWithNullOptions = new QuestionDTO("1","query1",null, "A");
+        assertNotEquals(q1, questionWithNullOptions);
+    }
+
+    @Test
+    void equals_differentAnswer_shouldReturnFalse() {
+        QuestionDTO questionWithDifferentAnswers = new QuestionDTO("1","query1",new String[]{"A","B","C"}, "C");
+        assertNotEquals(q1, questionWithDifferentAnswers);
+    }
+
+    @Test
+    void equals_nullAnswer_shouldReturnFalse() {
+        QuestionDTO questionWithNullAnswers = new QuestionDTO("1","query1",new String[]{"A","B","C"}, null);
+        assertNotEquals(q1, questionWithNullAnswers);
     }
 
     @Test
