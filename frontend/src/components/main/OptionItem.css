@@ -26,12 +26,12 @@ html.light .option-card {
 }
 
 .option-text,
-.option-count {
+.quiz-answer {
     font-size: 1.75rem;
 }
 
 .option-img,
-.option-count {
+.quiz-answer {
     width: 56px;
     height: 56px;
     padding: 8px;
@@ -39,7 +39,7 @@ html.light .option-card {
     background: hsl(151, 88%, 94%);
 }
 
-.option-count {
+.quiz-answer {
     background: hsl(220, 38%, 97%);
     color: hsl(216,47%,78%);
     display: flex;
@@ -47,7 +47,7 @@ html.light .option-card {
     justify-content: center;
 }
 
-.option-container .option-card:hover .option-count {
+.option-container .option-card:hover .quiz-answer {
     background: hsl(278, 100%, 95%);
     color: var(--accent-color);
 }
@@ -56,8 +56,8 @@ html.light .option-card {
     border: 3px solid var(--accent-color);
 }
 
-.active-option .option-count,
-.option-container .active-option:hover .option-count{
+.active-option .quiz-answer,
+.option-container .active-option:hover .quiz-answer{
     background: var(--accent-color);
     color: white;
 }

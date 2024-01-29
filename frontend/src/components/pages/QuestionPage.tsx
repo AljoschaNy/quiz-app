@@ -8,7 +8,7 @@ function QuestionPage() {
     const {topicId} = useParams();
     const [questions, setQuestions] = useState<Question[]>()
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
-    const optionCount:string[] = ["A","B","C","D"];
+    const quizAnswers:string[] = ["A","B","C","D"];
 
     useEffect(() => {
         if(topicId) {
@@ -23,7 +23,6 @@ function QuestionPage() {
     }
 
     function handleSubmit() {
-        alert(selectedOption);
         setSelectedOption(null)
     }
 
@@ -40,7 +39,7 @@ function QuestionPage() {
                     questions[0].options.map((option, index) => {
                     return <OptionCard
                         key={questions[0]+option}
-                        optionCount={optionCount[index]}
+                        quizAnswer={quizAnswers[index]}
                         optionText={option}
                         isSelected={selectedOption === option}
                         onClick={() => handleClick(option)}

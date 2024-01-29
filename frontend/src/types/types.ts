@@ -3,9 +3,9 @@ export type TopicCardProps = {
 }
 
 export type OptionCardProps = {
-    optionCount: string,
+    quizAnswer: string,
     optionText: string,
-    onClick: () => void
+    onClick: () => void,
     isSelected: boolean
 }
 

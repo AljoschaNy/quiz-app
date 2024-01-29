@@ -38,14 +38,13 @@
 /* General Styles */
 * {
   font-family: var(--primary-font);
+  font-weight: var(--font-weight-medium);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-weight: var(--font-weight-medium);
 }
 
 html {
-
   font-size: 16px;
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height);
