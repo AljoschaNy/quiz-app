@@ -1,0 +1,79 @@
+.option-card {
+    width: 100%;
+    height: 96px;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: 24px;
+    padding: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+html.light .option-card {
+    box-shadow: 0 16px 40px 0 var(--drop-shadow-color);
+}
+
+.topic-container .option-card:hover {
+    border: 1px solid var(--accent-color);
+}
+
+.option-text {
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+    margin-left: 32px;
+}
+
+.option-text,
+.quiz-answer {
+    font-size: 1.75rem;
+}
+
+.option-img,
+.quiz-answer {
+    width: 56px;
+    height: 56px;
+    padding: 8px;
+    border-radius: 8px;
+    background: hsl(151, 88%, 94%);
+}
+
+.quiz-answer {
+    background: hsl(220, 38%, 97%);
+    color: hsl(216,47%,78%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-container .option-card:hover .quiz-answer {
+    background: hsl(278, 100%, 95%);
+    color: var(--accent-color);
+}
+
+.active-option {
+    border: 3px solid var(--accent-color);
+}
+
+.active-option .quiz-answer,
+.option-container .active-option:hover .quiz-answer{
+    background: var(--accent-color);
+    color: white;
+}
+
+.html-img {
+    background: hsl(22, 100%, 96%);
+}
+
+.css-img {
+    background: hsl(151, 88%, 94%);
+}
+
+.javascript-img {
+    background: hsl(225, 100%, 96%);
+}
+
+.accessibility-img {
+    background: hsl(278, 100%, 95%);
+}

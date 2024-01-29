@@ -1,5 +1,12 @@
-export type OptionCardProps = {
+export type TopicCardProps = {
     topic: Topic
+}
+
+export type OptionCardProps = {
+    quizAnswer: string,
+    optionText: string,
+    onClick: () => void,
+    isSelected: boolean
 }
 
 export type Topic = {
@@ -11,4 +18,11 @@ export type Topic = {
 
 export type StartPageType = {
     topics: Topic[]
+}
+
+export type Question = {
+    id: string,
+    query: string,
+    options: string[],
+    answer: string
 }
