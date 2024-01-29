@@ -1,4 +1,4 @@
-import "./OptionCard.css";
+import "./OptionItem.css";
 import {OptionCardProps} from "../../types/types.ts";
 import {useNavigate} from "react-router-dom";
 
