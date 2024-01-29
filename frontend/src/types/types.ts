@@ -1,5 +1,12 @@
-export type OptionCardProps = {
+export type TopicCardProps = {
     topic: Topic
+}
+
+export type OptionCardProps = {
+    optionCount: string,
+    optionText: string,
+    onClick: () => void
+    isSelected: boolean
 }
 
 export type Topic = {

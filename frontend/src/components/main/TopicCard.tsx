@@ -10,10 +10,12 @@ function TopicCard({ topic }:Readonly<TopicCardProps>) {
     }
 
     return (
-        <button className={"option-card"} onClick={handleClick}>
-            <img className={topic.title.toLowerCase() + "-img option-img"} src={topic.icon} alt={topic.title + " illustration"} />
-            <p className={"option-text"}>{topic.title}</p>
-        </button>
+        <div className={"topic-container"}>
+            <button className={"option-card"} onClick={handleClick}>
+                <img className={topic.title.toLowerCase() + "-img option-img"} src={topic.icon} alt={topic.title + " illustration"} />
+                <span className={"option-text"}>{topic.title}</span>
+            </button>
+        </div>
     );
 }
 
