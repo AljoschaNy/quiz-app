@@ -22,6 +22,11 @@ function QuestionPage() {
         setSelectedOption(option);
     }
 
+    function handleSubmit() {
+        alert(selectedOption);
+        setSelectedOption(null)
+    }
+
     return questions && (
         <main className={"main-content"}>
             <section className={"info-section"}>
@@ -37,11 +42,11 @@ function QuestionPage() {
                         key={questions[0]+option}
                         optionCount={optionCount[index]}
                         optionText={option}
-                        isSelected={selectedOption === optionCount[index]}
-                        onClick={() => handleClick(optionCount[index])}
+                        isSelected={selectedOption === option}
+                        onClick={() => handleClick(option)}
                     />
                 })}
-                <button className={"option-select"}>Submit Answer</button>
+                <button className={"option-select"} onClick={handleSubmit}>Submit Answer</button>
             </section>
         </main>
     );
