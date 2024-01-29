@@ -19,21 +19,38 @@ function QuestionPage() {
         }
     }, [topicId])
 
+    useEffect(() => {
+        increaseProgress();
+    });
+
+    function increaseProgress() {
+        const progressBar = document.getElementById("progress-bar");
+
+        if(progressBar) {
+            const progress = ((currentQuestion+1) / questions.length) * 100;
+            progressBar.style.width = progress+"%";
+        }
+    }
+
     function handleClick(option:string) {
         setSelectedOption(option);
     }
 
     function handleSubmit() {
         currentQuestion < questions.length-1 ? setCurrentQuestion(currentQuestion+1) : alert("finish");
-        setSelectedOption(null)
+        increaseProgress();
+        setSelectedOption(null);
     }
+
 
     return questions.length > 0 && (
         <main className={"main-content"}>
             <section className={"info-section"}>
-                <p className={"info-text"}>Question 6 of 10</p>
+                <p className={"info-text"}>{`Question ${currentQuestion+1} of ${questions.length}`}</p>
                 <h2>{questions[currentQuestion].query}</h2>
-                <div className={"progress-bar"}></div>
+                <div className={"progress-bar-container"}>
+                    <div id={"progress-bar"}></div>
+                </div>
             </section>
 
             <section className={"options-container"}>
