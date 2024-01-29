@@ -1,8 +1,16 @@
-import "./StartPage.css";
 import TopicCard from "../main/TopicCard.tsx";
-import {StartPageType} from "../../types/types.ts";
+import {Topic} from "../../types/types.ts";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-function StartPage({topics}:Readonly<StartPageType> ) {
+function StartPage() {
+    const [topics, setTopics] = useState<Topic[]>([])
+
+    useEffect(() => {
+        axios.get<Topic[]>("/api/topics")
+            .then(response => setTopics(response.data))
+            .catch(error => console.log("error", error))
+    }, [])
 
     return (
         <main className={"main-content"}>
