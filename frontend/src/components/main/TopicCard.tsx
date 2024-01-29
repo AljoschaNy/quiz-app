@@ -1,8 +1,8 @@
 import "./OptionItem.css";
-import {OptionCardProps} from "../../types/types.ts";
 import {useNavigate} from "react-router-dom";
+import {TopicCardProps} from "../../types/types.ts";
 
-function TopicCard({ topic }:Readonly<OptionCardProps>) {
+function TopicCard({ topic }:Readonly<TopicCardProps>) {
     const navigate = useNavigate();
 
     function handleClick() {
@@ -11,8 +11,8 @@ function TopicCard({ topic }:Readonly<OptionCardProps>) {
 
     return (
         <button className={"option-card"} onClick={handleClick}>
-            <img className={topic.title.toLowerCase() + "-img topic-img"} src={topic.icon} alt={topic.title + " illustration"} />
-            <span className={"option-text"}>{topic.title}</span>
+            <img className={topic.title.toLowerCase() + "-img option-img"} src={topic.icon} alt={topic.title + " illustration"} />
+            <p className={"option-text"}>{topic.title}</p>
         </button>
     );
 }

@@ -16,6 +16,7 @@ function StartPage() {
         <main className={"main-content"}>
             <section className={"info-section"}>
                 <h1><span className={"intro-text"}>Welcome to the</span> Frontend Quiz!</h1>
+                <div className={"divider"}></div>
                 <p className={"info-text"}>Pick a subject to get started.</p>
             </section>
 
