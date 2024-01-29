@@ -1,27 +1,30 @@
 import {useParams} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
+import {Question} from "../../types/types.ts";
 
 function QuestionPage() {
     const {topicId} = useParams();
+    const [questions, setQuestions] = useState<Question[]>()
 
     useEffect(() => {
         if(topicId) {
-            axios.get("/api/questions/" + topicId)
-                .then(response => console.log(response.data))
-                .catch(error => console.log(error))
+            axios.get<Question[]>("/api/questions/" + topicId)
+                .then(response => setQuestions(response.data))
+                .catch(error => console.log("error", error))
         }
     }, [topicId])
 
-    return (
+    return questions && (
         <main className={"main-content"}>
             <section className={"info-section"}>
-                <h1>Question Page</h1>
-                <p className={"info-text"}>Pick a subject to get started.</p>
+                <p className={"info-text"}>Question 6 of 10</p>
+                <h2>{questions[0].query}</h2>
+                <div className={"progress-bar"}></div>
             </section>
 
             <section className={"options-container"}>
-                <p>{topicId}</p>
+            <p>{topicId}</p>
             </section>
         </main>
     );
