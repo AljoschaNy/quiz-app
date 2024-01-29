@@ -3,10 +3,12 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {Question} from "../../types/types.ts";
 import OptionCard from "../main/OptionCard.tsx";
+import ErrorIcon from "../icons/ErrorIcon.tsx";
 
 function QuestionPage() {
     const {topicId} = useParams();
-    const [questions, setQuestions] = useState<Question[]>([])
+    const [questions, setQuestions] = useState<Question[]>([]);
+    const [isError, setIsError] = useState(false);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const quizAnswers:string[] = ["A","B","C","D"];
@@ -33,15 +35,21 @@ function QuestionPage() {
     }
 
     function handleClick(option:string) {
+        setIsError(false);
         setSelectedOption(option);
     }
 
     function handleSubmit() {
-        currentQuestion < questions.length-1 ? setCurrentQuestion(currentQuestion+1) : alert("finish");
-        increaseProgress();
-        setSelectedOption(null);
-    }
+        if(selectedOption) {
+            increaseProgress();
+            currentQuestion < questions.length-1 ? setCurrentQuestion(currentQuestion+1) : alert("finish");
 
+            setSelectedOption(null);
+        } else {
+            setIsError(true);
+        }
+
+    }
 
     return questions.length > 0 && (
         <main className={"main-content"}>
@@ -65,6 +73,7 @@ function QuestionPage() {
                     />
                 })}
                 <button className={"option-select"} onClick={handleSubmit}>Submit Answer</button>
+                {isError && <p className={"error-message"}><ErrorIcon/><span>Please select an answer</span></p>}
             </section>
         </main>
     );

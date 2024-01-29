@@ -63,3 +63,18 @@ p.info-text {
     color: hsla(0,0%,100%,50);
     background: hsl(277, 91%, 78%);
 }
+
+.error-message {
+    font-size: 1.5rem;
+    color: var(--error-color);
+    text-align: center;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message span {
+    font-weight: var(--font-weight-regular);
+    margin-left: 8px;
+}
