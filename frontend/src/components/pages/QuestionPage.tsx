@@ -2,10 +2,13 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Question} from "../../types/types.ts";
+import OptionCard from "../main/OptionCard.tsx";
 
 function QuestionPage() {
     const {topicId} = useParams();
     const [questions, setQuestions] = useState<Question[]>()
+    const [selectedOption, setSelectedOption] = useState<string | null>(null);
+    const optionCount:string[] = ["A","B","C","D"];
 
     useEffect(() => {
         if(topicId) {
@@ -14,6 +17,10 @@ function QuestionPage() {
                 .catch(error => console.log("error", error))
         }
     }, [topicId])
+
+    function handleClick(option:string) {
+        setSelectedOption(option);
+    }
 
     return questions && (
         <main className={"main-content"}>
@@ -24,7 +31,17 @@ function QuestionPage() {
             </section>
 
             <section className={"options-container"}>
-            <p>{topicId}</p>
+                {
+                    questions[0].options.map((option, index) => {
+                    return <OptionCard
+                        key={questions[0]+option}
+                        optionCount={optionCount[index]}
+                        optionText={option}
+                        isSelected={selectedOption === optionCount[index]}
+                        onClick={() => handleClick(optionCount[index])}
+                    />
+                })}
+                <button className={"option-select"}>Submit Answer</button>
             </section>
         </main>
     );
