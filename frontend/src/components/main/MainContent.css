@@ -24,11 +24,19 @@ p.info-text {
     height: 48px;
 }
 
-.progress-bar{
+.progress-bar-container{
     width: 100%;
-    border: 8px solid var(--bg-secondary);
+    padding: 4px;
+    background: var(--bg-secondary);
     border-radius: 40px;
     margin-top: 123px;
+}
+
+#progress-bar {
+    width: 10%;
+    height: 8px;
+    border-radius: inherit;
+    background: var(--accent-color);
 }
 
 /* Options Container Styles */
@@ -54,4 +62,19 @@ p.info-text {
 .option-select:hover {
     color: hsla(0,0%,100%,50);
     background: hsl(277, 91%, 78%);
+}
+
+.error-message {
+    font-size: 1.5rem;
+    color: var(--error-color);
+    text-align: center;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message span {
+    font-weight: var(--font-weight-regular);
+    margin-left: 8px;
 }
